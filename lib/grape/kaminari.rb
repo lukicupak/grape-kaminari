@@ -1,7 +1,6 @@
 require 'grape'
 require 'grape/kaminari/version'
 require 'grape/kaminari/max_value_validator'
-require 'kaminari/grape'
 
 module Grape
   module Kaminari
@@ -16,8 +15,8 @@ module Grape
 
       params :pagination do |opts = {}|
         opts.reverse_merge!(
-          per_page: ::Kaminari.config.default_per_page || 10,
-          max_per_page: ::Kaminari.config.max_per_page,
+          per_page: 10,
+          max_per_page: 10,
           offset: 0,
         )
 
